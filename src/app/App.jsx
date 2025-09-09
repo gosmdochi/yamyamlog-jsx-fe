@@ -1,17 +1,23 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import Challenge from './pages/challenge/Challenge';
-import Daily from './pages/daily/Daily';
-import Home from './pages/home/Home';
-import RecipeDetail from './pages/recipeDetail/ReacipeDetail';
-import SavedList from './pages/savedList/SavedList';
-import Searching from "./pages/searching/Searching";
-import Notfound from './pages/Notfound';
+import Challenge from "@/pages/challenge/Challenge";
+import Daily from '@/pages/daily/Daily';
+import Home from '@/pages/home/Home';
+import RecipeDetail from '@/pages/recipeDetail/ReacipeDetail';
+import SavedList from '@/pages/savedList/SavedList';
+import Searching from "@/pages/searching/Searching";
+import Notfound from '@/pages/Notfound';
 
+import Fixed from '@/layout/components/Fixed';
+import Header from '@/layout/Header/Header';
 
 function App() {
 
   return (
+    <>
+    <Header />
+    <Fixed />
+
     <Routes>
       <Route path = "/" element = {<Home /> }/>
       <Route path = "/challenge" element = {<Challenge /> }/>
@@ -21,6 +27,7 @@ function App() {
       <Route path = "/searching" element = {<Searching /> }/>
       <Route path = "*" element = {<Notfound /> }/>
     </Routes>
+    </>
   );
 }
 
